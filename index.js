@@ -1,6 +1,6 @@
 const cool = require('cool-ascii-faces');
-const sleep = require('sleep');
-const wait = require('./wait');
+// const sleep = require('sleep');
+// const wait = require('./wait');
 const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
@@ -14,5 +14,16 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   // .get('/wait', (req, res) => res.send(wait.getSleep()))
-  .get('/wait', (req, res) => res.send(wait2s()))
+  // .get('/wait', (req, res) => res.send(wait2s()))
+  .get('/times', (req, res) => res.send(showTimes()))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+
+showTimes = () => {
+  let result = '';
+  const times = process.env.TIMES || 5;
+  for (i = 0; i < times; i++) {
+    result += i + ' ';
+  }
+  return result;
+}
