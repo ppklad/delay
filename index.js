@@ -1,5 +1,5 @@
 const cool = require('cool-ascii-faces');
-const sleep = require('sleep');
+// const sleep = require('sleep');
 // const wait = require('./wait');
 const express = require('express');
 const path = require('path');
@@ -30,12 +30,19 @@ showTimes = () => {
 }
 
 w = () => {
-  let result = '';
-  // const times = process.env.TIMES || 5;
-  // for (i = 0; i < times; i++) {
-  //   result += i + ' ';
-  // }
-  sleep.sleep(2)
+
+  async function demo() {
+    console.log('Taking a break...');
+    await sleep(2000);
+    console.log('Two seconds later, showing sleep in a loop...');
+  }
+
+  demo()
   result = 'ok'
   return result;
 }
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
