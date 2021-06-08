@@ -38,7 +38,7 @@ async function demo1() {
   let res
   console.log('Taking a break...');
   // await sleep(2000);
-  for (let i = 1; i < 10000000; i++) {
+  for (let i = 1; i < 30000000; i++) {
     res = 'cycle ' + i
   }
 
