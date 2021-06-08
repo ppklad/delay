@@ -29,26 +29,18 @@ showTimes = () => {
   return result;
 }
 
-w = () => {
-
-  async function demo() {
-    console.log('Taking a break...');
-    await sleep(2000);
-    console.log('Two seconds later, showing sleep in a loop...');
-  }
-
-  demo()
-  result = 'ok'
-  return result;
-}
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function demo1() {
+  let res
   console.log('Taking a break...');
-  await sleep(2000);
-  console.log('Two seconds later, showing sleep in a loop...');
-  return 'demo1'
+  // await sleep(2000);
+  for (let i = 1; i < 100000000; i++) {
+    res = 'cycle ' + i
+  }
+
+  return res
 }
