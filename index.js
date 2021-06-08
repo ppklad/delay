@@ -10,5 +10,5 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
-  .get('/wait', (req, res) => res.send(sleep.sleep(5)))
+  .get('/wait', (req, res) => res.send(sleep.sleep(2)))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
