@@ -1,5 +1,5 @@
 const cool = require('cool-ascii-faces');
-const sleep = require('./wait');
+const sleep = require('sleep');
 const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
@@ -10,5 +10,5 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
-  .get('/wait', (req, res) => res.send(sleep.getSleep()))
+  .get('/wait', (req, res) => res.send(sleep.sleep(5)))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
