@@ -16,7 +16,7 @@ express()
   // .get('/wait', (req, res) => res.send(wait.getSleep()))
   // .get('/wait', (req, res) => res.send(wait2s()))
   .get('/times', (req, res) => res.send(showTimes()))
-  .get('/wait', (req, res) => res.send(wait()))
+  .get('/wait', (req, res) => res.send(w()))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 
@@ -29,7 +29,7 @@ showTimes = () => {
   return result;
 }
 
-wait = () => {
+w = () => {
   let result = '';
   // const times = process.env.TIMES || 5;
   // for (i = 0; i < times; i++) {
