@@ -16,7 +16,7 @@ express()
   // .get('/wait', (req, res) => res.send(wait.getSleep()))
   // .get('/wait', (req, res) => res.send(wait2s()))
   .get('/times', (req, res) => res.send(showTimes()))
-  .get('/wait', (req, res) => res.send(w()))
+  .get('/wait', (req, res) => res.send(demo1()))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 
@@ -46,3 +46,9 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function demo1() {
+  console.log('Taking a break...');
+  await sleep(2000);
+  console.log('Two seconds later, showing sleep in a loop...');
+  return 'demo1'
+}
