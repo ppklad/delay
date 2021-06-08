@@ -3,7 +3,7 @@ const cool = require('cool-ascii-faces');
 // const wait = require('./wait');
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 const wait2s = () => { sleep.sleep(2); return 'ok' }
 
@@ -38,7 +38,7 @@ async function demo1() {
   let res
   console.log('Taking a break...');
   // await sleep(2000);
-  for (let i = 1; i < 100000000; i++) {
+  for (let i = 1; i < 10000000; i++) {
     res = 'cycle ' + i
   }
 
